@@ -1,4 +1,4 @@
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, Permissions } = require('discord.js');
 const fetch = require('node-fetch');
 const Zip = require('adm-zip');
 
@@ -19,7 +19,16 @@ const client = new Client({
 });
 
 client.on('messageCreate', async (message) => {
+    if (message.author.bot || !message.guild) return;
+
     if (message.content.toLowerCase().startsWith('!zip')) {
+        if (
+            !message.member.permissions.has(
+                Permissions.FLAGS.MANAGE_EMOJIS_AND_STICKERS
+            )
+        )
+            return;
+
         const emojis = [...message.guild.emojis.cache.values()];
         if (!emojis.length) return message.reply('Guild has no emojis.');
 
