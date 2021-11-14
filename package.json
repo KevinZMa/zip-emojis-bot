@@ -1,0 +1,36 @@
+{
+    "name": "zip-emojis",
+    "version": "1.0.0",
+    "description": "Exports all emojis in a guild to a zip file.",
+    "author": "Kevin",
+    "main": "index.js",
+    "scripts": {
+        "start": "run-s format bot",
+        "bot": "node index.js",
+        "format": "prettier --write \"**/*.{js,ts,json}\""
+    },
+    "keywords": [
+        "discord",
+        "emojis",
+        "zip"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "adm-zip": "^0.5.9",
+        "discord.js": "^13.3.1",
+        "dotenv-safe": "^8.2.0",
+        "node-fetch": "^2.6.1"
+    },
+    "devDependencies": {
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.4.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KevinZMa/zip-emojis-bot.git"
+    },
+    "bugs": {
+        "url": "https://github.com/KevinZMa/zip-emojis-bot/issues"
+    },
+    "homepage": "https://github.com/KevinZMa/zip-emojis-bot#readme"
+}
